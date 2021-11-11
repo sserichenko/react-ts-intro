@@ -8,6 +8,11 @@ type TodoListProps = {
 };
 
 const TodoList: React.FC<TodoListProps> = ({ todos, onToggle, onRemove }) => {
+  if(todos.length === 0){
+    return (
+      <p className="center red-text text-darken-5">У Вас пока нет ни одной задачи !</p>
+    )
+  }
   return (
     <ul>
       {todos.map(todo => {
